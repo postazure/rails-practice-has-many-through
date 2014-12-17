@@ -4,18 +4,11 @@
 
 <h2>People</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>
-        Name
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <div class="well">
-      Replace me with a list of person names that this organization
-      is connected to, via employments.
-    </div>
-  </tbody>
-</table>
+<div class="well">
+  <strong>Name</strong>
+  <ul>
+    <% @organization.people.each do |person| %>
+      <li><%= link_to person.name, person_path(person) %></li>
+    <% end %>
+  </ul>
+</div>
